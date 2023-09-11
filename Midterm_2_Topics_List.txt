@@ -1,0 +1,53 @@
+Midterm 2 Topics List 
+
+*** All material covered after and including linked lists is fair game. ***
+*** This list is a general outline, you can ask me anything specific in class ***
+
+1. Linked Lists
+    * Node structure
+    * How data is organized
+    * How nodes are kept in sequence 
+    * Advantages over dynamic arrays
+        * Easier to insert, remove
+        * Never have to resize
+    * Disadvantages compared to dynamic arrays
+        * Loss of random access to elements
+        * Have to follow pointers
+    * Special cases to consider when adding / removing nodes
+    * Tail pointers (advantages and disadvantages)
+    * Doubly linked lists
+        * What to change about the nodes
+        * Advantages and disadvantages 
+    * Implementing and using a linked list iterator
+2. Template functions and classes
+    * Why make something a template?
+    * Does template code compile? Why or why not?
+    * Template header
+    * Template parameter
+    * Making a template class (separate compilation)
+    * Using a template class or function
+3. The Standard Template Library (STL)
+    * What is is?
+    * How do you use code from it?
+    * Know how the different containers work
+        * vector, list, stack, queue, priority queue, set, multiset, 
+4. Inheritance
+    * Making a child class
+    * What does the child inherit?
+    * What is the point of making a protected section?
+    * What is a virtual function?
+    * What is a purely virtual function?
+        * What does this do to the class it is a member of?
+    * How do you make a container that seems to store different types of objects (polymorphism)?
+    * What is slicing? When does it happen?
+    * When can you use a child object instead of a parent object? When can you use a parent object instead of a child object?
+5. Stacks and Queues
+    * How does each one operate?
+    * What are the 4 functions each needs?
+    * Do you need to make an iterator?
+    * There will be a question with some code that uses a stack or queue and asks you to show what would be in the stack or queue when the code is done.
+6. Recursion
+    * What is the base case? Why do you need it?
+    * What is the recursive call?
+        * What must be defferent about it from the initial call?
+    * Be able to show how a recursive function is operating
