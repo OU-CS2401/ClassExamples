@@ -1,0 +1,40 @@
+Creating an SSH key pair for GitHub:
+    1. In your terminal run:
+        ssh-keygen -t ed25519 -C "your_email@example.com"
+    2. Run:
+        ls .ssh/
+            * This should show at least 2 files, one called id_ed25519 and one called id_ed25519.pub
+    3. Run:
+        cat .ssh/id_ed25519.pub
+            * MAKE SURE YOU ADD THE .pub
+            * This should show a string that starts with "ssh_ed25519" and ends with your email.
+    4. Copy the text from the id_25519.pub file.
+    5. On GitHub:
+        1. Log in to your account.
+        2. Find the "Settings" menu
+        3. On the left sidebar, you should see "SSH and GPG keys"
+        4. Click the green box that says "New SSH Key"
+        5. Give the key a name (I usually put something that describes the machine it is for)
+        6. Paste the id_ed25519.pub contents in the box marked "Key"
+        7. Save
+    6. Remember that for the key to work, you will need to clone with the SSH url from now on.
+
+
+
+Git Commands:
+
+git clone <repo url>
+    * Use the SSH option for the URL if you want to authenticate with a key instead of token.
+
+git status
+
+git add <something>
+    * A file name or "." to add all pending changes
+
+git status 
+
+git commit -m "message"
+    * Remember to add "run-tests" if you want the automated tests to run when you push to GitHub
+
+git push
+
