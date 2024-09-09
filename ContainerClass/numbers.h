@@ -44,6 +44,8 @@ class Numbers{
          */
         void remove(int target);
 
+        void selection_sort();
+
     private:
         // array to store the data
         int data[SIZE];
