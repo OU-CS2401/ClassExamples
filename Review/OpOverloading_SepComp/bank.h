@@ -7,10 +7,10 @@
 class Bankacct{
     public:
         // member
-        //Bankacct operator + (const Bankacct& b_right) const;
+        Bankacct operator + (const Bankacct& b_right) const;
 
         // friend
-        friend Bankacct operator + (const Bankacct& b_left, const Bankacct& b_right);
+        //friend Bankacct operator + (const Bankacct& b_left, const Bankacct& b_right);
 
 
         void set_amount(double num) {amount = n;}
@@ -27,5 +27,7 @@ class Bankacct{
 
 // non-member, non-friend
 //Bankacct operator + (const Bankacct& b_left, const Bankacct& b_right);
+
+std::istream& operator >> (std::istream& ins, Bankacct& b);
 
 #endif

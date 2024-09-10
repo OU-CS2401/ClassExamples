@@ -20,13 +20,13 @@ Bankacct Bankacct::operator + (const Bankacct& b_right) const{
 }
 
 // friend
-Bankacct operator + (const Bankacct& b_left, const Bankacct& b_right){
-    Bankacct new_acct;
+// Bankacct operator + (const Bankacct& b_left, const Bankacct& b_right){
+//     Bankacct new_acct;
 
-    new_acct.amount = b_left.amount + b_right.amount;
+//     new_acct.amount = b_left.amount + b_right.amount;
 
-    return new_acct;
-}
+//     return new_acct;
+// }
 
 void Bankacct::input(std::istream& ins){
     cout << "Enter the amount in the account (decimal number): ";
@@ -34,4 +34,9 @@ void Bankacct::input(std::istream& ins){
     cout << "Enter the name on the account: "; //"John Smith"
     cin >> ws;
     getline(cin, name);
+}
+
+istream& operator >> (istream& ins, Bankacct& b){
+    b.input(ins);
+    return ins;
 }
