@@ -71,15 +71,16 @@ void Numbers::selection_sort(){
     
 }
 
-void Numbers::remove(int target){
-    // copy last used item over the one to be removed
-    for(int i = 0; i < used; i++){
-        if(data[i] == target){
-            data[i] = data[used - 1];
-            used--;
-            i--;
-        }
-    }
+void Numbers::insert(int item){
+
+}
+
+void Numbers::attach(int item){
+    
+}
+
+void Numbers::remove(){
+    // move all items after the one at current_index up one space in the list
 }
 
 bool Numbers::search(int target) const{

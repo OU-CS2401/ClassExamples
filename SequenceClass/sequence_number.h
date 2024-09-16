@@ -22,11 +22,18 @@ class Numbers{
         void display() const;
 
         /**
-         * @brief Put a new item before the one pointed to by current_index or at the beginning by default.
+         * @brief Put a new item before the one pointed to by current_index or at the beginning of the list by default.
          * 
-         * @param item - the number to insert
+         * @param item - the number to add
          */
         void insert(int item);
+
+        /**
+         * @brief Put a new item after the one pointed to by current_index or at the end of the list by default.
+         * 
+         * @param item - the number to add
+         */
+        void attach(int item);
 
         /**
          * @brief Determine if a target number is in the data array.
@@ -38,12 +45,12 @@ class Numbers{
         bool search(int target) const;
 
         /**
-         * @brief Delete a number from the array. This function uses a simple method because the
-         *        order of the data in the array does not matter.
+         * @brief Delete a number from the array. Items must be kept in order so all items after the one at
+         *        current_index are moved up in the list by one space.
          * 
          * @param target - the number to delete
          */
-        void remove(int target);
+        void remove();
 
         /**
          * @brief Sort the array using the selection sort algorithm
