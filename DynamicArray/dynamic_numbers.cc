@@ -13,9 +13,34 @@ Numbers::Numbers(){
     data = new int[size];
 }
 
+Numbers::~Numbers(){
+    delete [] data;
+}
+
+Numbers::Numbers(const Numbers& other){
+    size = other.size;
+    used = other.used;
+
+    data = new int[size];
+    // copy all data from other to this
+    // fill this in with loop or copy function
+}
+
+void Numbers::operator = (const Numbers& other){
+    // check for self assignment
+    if(this == &other){
+        return;
+    }
+    
+    // destroy old data
+    // fill this in with deconstructor code
+
+    // make a copy
+    // fill this in with copy constructor code
+}
+
 void Numbers::add(int a){
     // verify that used is valid before trying to add something at that position
-    // if there is no room left, resize to make more
     if(used >= size){
         resize();
     }

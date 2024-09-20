@@ -11,11 +11,35 @@ class Numbers{
          */
         Numbers();
 
+        // The Big 3
+        /**
+         * @brief Destroy the Numbers object
+         *        Called the deconstructor or destructor
+         * 
+         */
+        ~Numbers();
+
+        /**
+         * @brief Construct a new Numbers object that is a copy of an existing one
+         * 
+         * @param other - the object you want to copy from
+         */
+        Numbers(const Numbers& other);
+
+        /**
+         * @brief Set object on the left (this) to be a copy of the object on the right (other)
+         * 
+         * @param other - the object you want to copy from
+         */
+        void operator = (const Numbers& other);
+
         /**
          * @brief Show all the numbers that have been added to the array.
          * 
          */
         void display() const;
+
+        void add(int a);
 
         /**
          * @brief Determine if a target number is in the data array.
