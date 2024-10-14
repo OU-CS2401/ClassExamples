@@ -69,3 +69,28 @@ void LList::add_to_begin(int d){
     head = new Node(d);
     head -> set_next(cursor);
 }
+
+void LList::remove(int target){
+    if(head == nullptr) return;
+
+    if(head -> data == target){
+        node* cursor = head;
+        head = head -> next;
+        delete cursor;
+        return;
+    }
+
+    node* prev, *cursor;
+
+    // find the node to remove and the previous node
+    for(cursor = head; cursor -> next -> data; cursor = cursor -> next){
+
+    }
+
+    if(cursor -> next != nullptr){
+        prev = cursor;
+        cursor = cursor -> next;
+        prev -> next = prev -> next -> next;
+        delete cursor;
+    }
+}

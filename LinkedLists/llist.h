@@ -9,6 +9,7 @@ class LList{
 
         void add_to_end(int d);
         void add_to_begin(int d);
+        void remove(int target);
 
     private:
         Node* head;
