@@ -1,0 +1,12 @@
+template <class T>
+T_Cont<T>::T_Cont(){
+    used = 0;
+}
+
+template <class T>
+void T_Cont<T>::add(const T& item){
+    if(used != SIZE){
+        data[used] = item;
+        used++;
+    }
+}
