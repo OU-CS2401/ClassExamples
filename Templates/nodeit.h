@@ -1,7 +1,7 @@
 #include "tnode.h"
 #include "tllist.h"
 
-template <class T> TLList;
+template <class T> class TLList;
 
 template <class T>
 class nodeIT{
