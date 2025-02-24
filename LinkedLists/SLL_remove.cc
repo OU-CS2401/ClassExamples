@@ -21,6 +21,7 @@ void show_all(node* head){
         cout << tmp -> data << endl;
         tmp = tmp -> next;
     }
+    cout << endl;
 }
 
 /**
@@ -72,10 +73,34 @@ void add_to_end(node*& head, int item){
  * 
  * @param head - pointer to the beginning of the list
  * @param target - the item I want to remove
+ * 
+ *  Special cases: 
+ *  1. item not found
+ *  2. empty list
+ *  3. last element
+ *  4. one item
+ *  5. first element
  */
 void remove(node*& head, int target){
     // handle empty list
     if (head == nullptr) return;
+
+    if(head -> data == target){
+        // The two methods below are equally valid. Use ONLY ONE.
+
+        // Option 1:
+        // node* tmp;
+        // tmp = head -> next;
+        // delete head;
+        // head = tmp;
+
+        // Option 2:
+        node* tmp = head;
+        head = head -> next;
+        delete tmp;
+
+        return;
+    }
 
     // move tmp to point at the node before the one I want to remove
     node *before, *tmp;
@@ -98,17 +123,7 @@ void remove(node*& head, int target){
     delete tmp;
 }
 
-/* 
 
-Special cases: 
-1. item not found
-2. empty list
-3. last element
-
-4. one item
-5. first element
-
-*/
 
 int main(){
     // start with an empty list
@@ -126,6 +141,11 @@ int main(){
     cout << "List after add_to_end:\n";
     show_all(head);
 
+    // try to remove node that doesn't exist
+    remove(head, 15);
+    cout << "List after trying to remove 15:\n";
+    show_all(head);
+
     // remove a node in the middle of the list
     remove(head, 1);
     cout << "List after removing 1:\n";
@@ -136,5 +156,25 @@ int main(){
     cout << "List after removing last node:\n";
     show_all(head);
 
-    // Not complete, not all special cases implemented in the remove function yet
+    // remove all nodes except 7 and 8
+    for(int i = 2; i < 7; i++){
+        remove(head, i);
+    }
+    cout << "List after removing all but last 2 nodes:\n";
+    show_all(head);
+
+    // remove head node
+    remove(head, 7);
+    cout << "List after removing head (7):\n";
+    show_all(head);
+
+    // try to remove node that doesn't exist with single node list
+    remove(head, 15);
+    cout << "List after trying to remove 15:\n";
+    show_all(head);
+
+    // remove last node (single node list case)
+    remove(head, 8);
+    cout << "List after removing 8:\n";
+    show_all(head);
 }
