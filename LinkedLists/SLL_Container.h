@@ -32,6 +32,23 @@ class LLCont{
          */
         LLCont(const LLCont& other);
 
+        /**
+         * @brief Overloaded assignment operator for a singly linked list container.
+         *        Resets an existing object to be a copy of another existing object. 
+         *        Must check for self-assignment, delete old data, and then copy the new data.
+         * 
+         * @param other - the object to copy data from
+         * @return LLCont& - return a reference to this object for chaining assignments (L1 = L2 = L3;)
+         */
+        LLCont& operator = (const LLCont& other);
+
+        /**
+         * @brief Add a new node to the end of the list
+         * 
+         * @param data - the number to store in the new node
+         */
+        void add_to_end(int data);
+
     private:
         Node* head;
 };

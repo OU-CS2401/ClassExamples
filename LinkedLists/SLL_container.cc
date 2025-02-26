@@ -16,7 +16,18 @@ LLCont::LLCont(const LLCont& other){
     else{
         head = new Node(other.head -> data());
 
+        Node *src = other.head -> next();
+        Node *dest = head;
+
         // This is incomplete as of 2/24 - only the first node is copied so far
+        while(src != nullptr){
+            // Node* n = new Node();
+            // dest -> set_next(n);
+
+            dest -> set_next(new Node(src -> data()));
+            src = src -> next();
+            dest = dest -> next();
+        }
     }
 }
 
@@ -27,4 +38,32 @@ LLCont::~LLCont(){
         head = head -> next();
         delete rmptr;
     }
+}
+
+LLCont& LLCont::operator = (const LLCont& other){
+    // check for self assignment
+    if(this == &other){
+        return *this;
+    }
+
+    // deallocate all nodes in the list
+    // deconstructor code
+
+    // make a copy
+    // copy constructor code
+
+    return *this;
+}
+
+
+void LLCont::add_to_end(int data){
+    Node *cursor = head;
+
+    while(cursor -> next() != nullptr){
+        cursor = cursor -> next();
+    }
+
+    cursor -> set_next(new Node(data));
+
+    // This function is incomplete as is - what special cases need to be considered??
 }
