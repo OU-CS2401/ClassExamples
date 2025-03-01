@@ -16,7 +16,7 @@ class LLCont{
          * @brief Construct a new LLCont object - start with an empty list
          * 
          */
-        LLCont() {head = nullptr;}
+        LLCont() {head = tail = nullptr;}
 
         // The Big 3
         /**
@@ -49,6 +49,22 @@ class LLCont{
          */
         void add_to_end(int data);
 
+        /**
+         * @brief Add a new node to the beginning of the list
+         * 
+         * @param data - the number to store in the new node
+         */
+        void add_to_head(int data);
+
+        /**
+         * @brief Remove the first node in the list that matches the target data
+         * 
+         * @param target - data value we want to remove from the list
+         */
+        void remove(int target);
+
+
     private:
         Node* head;
+        Node* tail;
 };
