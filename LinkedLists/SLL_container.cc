@@ -109,4 +109,7 @@ void LLCont::remove(int target){
     before -> set_next(tmp -> next());
     // deallocate the node we wanted to remove
     delete tmp;
+
+    // handle moving tail if you removed the last node 
+    if(before -> next() == nullptr) tail = before;
 }
