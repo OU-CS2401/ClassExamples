@@ -51,6 +51,23 @@ void my_swap(T& x, T& y){
 }
 
 
+// pass the size as "S" because it will work with
+// int, double, size_t, unsigned, etc
+template<class T, class S>
+void ssort(T a[], S used){
+    S smallsp;
+    for(S i = 0; i < used - 1; i++){
+        smallsp = i;
+        for(S j = i + 1; j < used; j++){
+            if(a[j] < a[smallsp]){
+                smallsp = j;
+            }
+        }
+        my_swap(a[i], a[smallsp]); // this is my template swap function
+    }
+}
+
+
 int main(){
     int a = 1, b = 7;
     double d = 3.14159, e = 123.456;
@@ -77,4 +94,26 @@ int main(){
     cout << "d: " << d << "\te: " << e << endl;
     cout << "h: " << h << "\tw: " << w << endl;
     cout << "c1: " << c1 << "\tc2: " << c2 << endl;
+
+    // Selection sort
+    int nums[10] = {3,2,6,4,1,7,8,5};
+    size_t nums_used = 8;
+    string names[5] = {"Victoria", "Dominic", "Kyle", "Allison"};
+    unsigned names_used = 4;
+
+    ssort(nums, nums_used);
+    ssort(names, names_used);
+
+    // output sorted numbers
+    cout << "\nNums: ";
+    for(size_t i = 0; i < nums_used; i++){
+        cout << nums[i] << " ";
+    }
+
+    // output sorted names
+    cout << "\n\nNames: ";
+    for(unsigned i = 0; i < names_used; i++){
+        cout << names[i] << " ";
+    }
+    cout << endl;
 }
