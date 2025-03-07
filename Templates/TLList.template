@@ -1,0 +1,84 @@
+
+template<class T>
+TLList<T>::TLList(){
+    head = tail = nullptr;
+}
+
+template<class T>
+TLList<T>::TLList(const TLList<T>& other){
+    if(other.head == nullptr){
+        head = tail = nullptr;
+    }
+    else{
+        node<T>* src;
+        head = new node<T>(other.head -> data());
+        src = other.head -> next();
+        while(src != nullptr){
+            tail -> set_next(new node<T>(src -> data()));
+            src = src -> next();
+            tail = tail -> next();
+        }
+    }
+}
+
+template<class T>
+TLList<T>& TLList<T>::operator = (const TLList<T>& other){
+    if(this == &other){
+        return *this;
+    }
+
+    // destructor code to remove old list
+    node<T>* rmptr;
+    while(head != nullptr){
+        rmptr = head;
+        head = head -> next();
+        delete rmptr;
+    }
+
+    // copy constructor code
+    if(other.head == NULL){
+        head = tail = NULL;
+    }
+    else{
+        node<T>* src;
+        head = new node<T>(other.head -> data());
+        src = other.head -> next();
+        while(src != nullptr){
+            tail -> set_next(new node<T>(src -> data()));
+            src = src -> next();
+            tail = tail -> next();
+        }
+    }
+
+    // now that this object has been reset to whatever was 
+    // on the right hand side, return myself
+    return *this;
+}
+
+template<class T>
+TLList<T>::~TLList(){
+    node<T>* rmptr = head;
+    while(head != nullptr){
+        rmptr = head;
+        head = head -> next();
+        delete rmptr;
+    }
+}
+
+template<class T>
+void TLList<T>::add(const T& item){
+    if(head == nullptr){
+        head = tail = new node<T>(item);
+    }
+    else{
+        tail -> set_next(new node<T>(item));
+        tail = tail -> next();
+    }
+}
+
+template<class T>
+void TLList<T>::display(std::ostream& outs)const{
+    for(const node<T>* cursor; cursor != nullptr; cursor = cursor -> next()){
+        outs << cursor -> data() << std::endl;
+    }
+}
