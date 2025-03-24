@@ -3,8 +3,8 @@ using namespace std;
 
 class Shape{
     public:
-        Shape() {cost_per = 0;
-        }
+        Shape() {cost_per = 0;}
+        
         double cost() {return area() * cost_per;}
 
         // This area function is virtual; it can be optionall overridden by children
