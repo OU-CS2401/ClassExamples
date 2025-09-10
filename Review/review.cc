@@ -10,9 +10,16 @@
 // Includes for necessary libraries
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <vector>
 
 // Open any namespaces that you plan to use
 using namespace std;
+
+struct Person{
+    char n;
+    int bday;
+};
 
 // Begin the main program
 int main(){
@@ -34,11 +41,15 @@ int main(){
         There are other data types like string, but you need to include a library to use them
     */
 
+
+
     // Arrays - a collection of same-type data
     // create a contiguous block of memory that can hold 10 integers
     int numbers[10];
     // set num to the first value in the array - index numbers are 0 -> size - 1
     num = numbers[0];
+
+
 
     // Input and Output - you must include the iostream library
 
@@ -59,4 +70,47 @@ int main(){
     cout << "Enter a whole number: ";
     cin >> num;
     cout << "You entered " << num << endl;
+
+
+
+    // Vectors - STL dynamic array class, must #include <vector> to use
+    // declare a vector of integers with default size
+    vector<int> nums;
+    // declare a vector of strings with starting size of 10 (must also include string library for this to work)
+    vector<string> names[10];
+
+    // add items to a vector
+    nums.push_back(5);
+    nums.push_back(7);
+    // remove last element added to a vector
+    nums.pop_back();
+    // output number of items you've added
+    cout << "Nums has " << nums.size() << " elements" << endl;
+
+
+
+    // Flow control constructs (branching and looping)
+
+    // if - else if - else
+    if(num < 10){
+        cout << "Small number\n";
+    }
+    // compound condition using AND
+    else if(num >= 10 && num < 100){
+        cout << "Medium number\n";
+    }
+    else{
+        cout << "Large number\n";
+    }
+
+    switch(num){
+        case 1:
+        
+        case 2:
+
+        default:
+            break;
+    }
+
+
 }
