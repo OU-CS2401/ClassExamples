@@ -1,3 +1,14 @@
+/**
+ * @file pointers.cc
+ * @author Patricia Lindner
+ * @brief This file demonstrates how to create a pointer and see the value it stores, its address, and the
+ *        value in the memory it is pointing to.
+ *        THERE IS NO DYNAMIC MEMORY ALLOCATION HAPPENING IN THIS FILE.
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include <iostream>
 using namespace std;
 
@@ -18,5 +29,4 @@ int main(){
     cout << "Address of i: " << &i << endl;
     // output the value at the location i is pointing to
     cout << "i is pointing to the value: " << *i << endl;
-
 }
