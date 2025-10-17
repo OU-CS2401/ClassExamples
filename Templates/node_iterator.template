@@ -1,0 +1,14 @@
+// prefix ++ 
+template<class T>
+node_iterator<T> node_iterator<T>::operator ++ (){
+    current = current -> next();
+    return *this;
+}
+
+// postfix ++ 
+template<class T>
+node_iterator<T> node_iterator<T>::operator ++ (int){
+    node_iterator original(*this);
+    current = current -> next();
+    return original;
+}
