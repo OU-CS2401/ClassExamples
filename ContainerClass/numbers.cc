@@ -18,7 +18,7 @@ void Numbers::see_all() const{
 
 void Numbers::add_item(double i){
     // make sure there is space to add something to the array
-    if(used < 100){
+    if(used < SIZE){
         data[used] = i;
         used++;
     }

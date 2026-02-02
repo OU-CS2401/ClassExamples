@@ -3,6 +3,8 @@
 
 class Numbers{
     public:
+        static const size_t SIZE = 100;
+
         /**
          * @brief Construct a new Numbers object - set initial value of used to 0.
          * 
@@ -30,8 +32,8 @@ class Numbers{
         void see_all() const;
 
     private:
-        double data[100];
-        unsigned used;
+        double data[SIZE];
+        size_t used;
 };
 
 #endif 
