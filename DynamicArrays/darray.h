@@ -22,6 +22,14 @@ class Darray{
          */
         Darray();
 
+        // The Big 3
+        // deconstructor
+        ~Darray();
+        // copy constructor
+        Darray(const Darray& other);
+        // assignment operator
+        void operator = (const Darray& other);
+
         /**
          * @brief Insert a new number into the array
          * 

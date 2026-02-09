@@ -11,6 +11,39 @@ Darray::Darray(){
     data = new double[size];
 }
 
+Darray::~Darray(){
+    delete [] data;
+}
+
+Darray::Darray(const Darray& other){
+    used = other.used;
+    size = other.size;
+
+    data = new double[size];
+    for(int i = 0; i < used; i++){
+        data[i] = other.data[i];
+    }
+    //copy(other.data, other.data + used, data);
+}
+
+void Darray::operator = (const Darray& other){
+    // check for self-assignment 
+    if(this == &other){
+        return;
+    }
+    
+    // get rid old dynamic memory (deconstructor)
+    delete [] data;
+    // make a copy of other (copy constructor)
+    used = other.used;
+    size = other.size;
+
+    data = new double[size];
+    for(int i = 0; i < used; i++){
+        data[i] = other.data[i];
+    }
+}
+
 void Darray::see_all() const{
     // make sure there is data to display first
     if(used != 0){
@@ -60,6 +93,11 @@ void Darray::resize(){
     for(int i = 0; i < used; i++){
         tmp[i] = data[i];
     }
+    /*
+        #include <algorithm> 
+        //copy(begin, end, destination);
+        copy(data, data + used, tmp);
+    */
 
     // deallocate the old array
     delete [] data;
@@ -69,5 +107,5 @@ void Darray::resize(){
     size += 5;
 
     // don't do this - why?
-    delete [] tmp;
+    //delete [] tmp;
 }
