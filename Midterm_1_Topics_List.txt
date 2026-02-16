@@ -1,0 +1,48 @@
+Midterm 1 Topics List 
+
+*** All material covered so far this semester is fair game. ***
+
+1. Operator Overloading
+    * Member, Non-Member, Friend
+    * Where do the declarations go?
+    * How many arguments does each take?
+    * How is private data accessed differently for each method?
+    * Do the arguments on either side of the operator need to be the same type?
+2. Debugging
+    * GDB commands
+    * How do you compile a program for debugging?
+    * What kinds of errors does the debugger help you find?
+3. Container classes
+    * What is a container class?
+    * What types of containers have we covered?
+4. Searching and Sorting
+    * Linear search 
+    * Bubble sort 
+    * Selection sort 
+    * Insertion sort 
+    * Big O notation
+        * What does Big O represent? That is, what does it tell us about an algorithm?
+        * What is the Big O for the search/sort algorithms we covered in class?
+5. Dynamic Memory
+    * pointers 
+    * new 
+    * delete 
+6. Dynamic Arrays
+    * allocating
+    * deallocating
+    * resizing
+    * using in a container 
+        * The Big 3
+7. Linked Lists
+    * Node structure
+    * How is data organized?
+    * How are nodes kept in sequence?
+    * Advantages over dynamic arrays
+        * Easier to insert, remove while maintaining order
+        * Never have to resize
+        * Can take advantage of smaller pieces of available memory - can store more data overall
+    * Disadvantages
+        * Loss of random access to elements
+        * Have to follow pointers
+        * Total number of bytes used is greater for the same number of items
+    * Special cases to consider when adding / removing nodes
