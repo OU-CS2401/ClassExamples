@@ -89,7 +89,7 @@ void remove(Node*& head, int target){
         4. target doesn't exist
         5. last node
         6. first node
-        7. multiple nodes with target
+        7. multiple nodes with target (optional)
     */
 
     // empty list
@@ -113,5 +113,17 @@ void remove(Node*& head, int target){
         head = second_node;
         return;
     }
-    
+
+    // generic case W/ last node and item not found
+    Node* cursor = head;
+    Node* prev = nullptr;
+    for(; cursor != nullptr && (cursor -> data != target); cursor = cursor -> next){
+        if(cursor -> next != nullptr && cursor -> next -> data == target){
+            prev = cursor;
+        }
+    }
+    if(prev != nullptr) {
+        prev -> next = cursor -> next;
+        delete cursor;
+    }
 }
