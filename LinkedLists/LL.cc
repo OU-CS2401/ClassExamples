@@ -179,10 +179,11 @@ void LL_Container::remove(int target){
         }
     }
     if(prev != nullptr) {
-        prev -> next() = cursor -> next();
+        prev -> set_next(cursor -> next());
         // removing last node
         if(cursor == tail){
             tail = prev;
+            //tail -> set_next(nullptr);
         }
         delete cursor;
     }
