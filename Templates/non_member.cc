@@ -12,6 +12,9 @@
 template<typename T> void my_swap(T& a, T& b);
 template<class T, class S> void ssort(T a[], S used);
 
+// Added example function using auto instead of template
+void auto_swap(auto& a, auto& b);
+
 int main(){
     int x = 5, y = 7;
     std::string a = "hello", b = "world";
@@ -24,13 +27,24 @@ int main(){
     my_swap(a, b); // instantiation for string
 
     // the nex line doesn't compile - why?
-    my_swap(x, c);
+    //my_swap(x, c);
+    
+    // calling the auto version
+    auto_swap(x, c);
+    // I don't get any red squiggles in VS Code for the next line, but when I run the compiler it fails - why?
+    auto_swap(a, y);
 
     ssort(array, used); // instantiation for array of double and int used 
 }
 
 template<typename T> void my_swap(T& a, T& b){
     T tmp = a;
+    a = b;
+    b = tmp;
+}
+
+void auto_swap(auto& a, auto& b){
+    auto tmp = a;
     a = b;
     b = tmp;
 }
@@ -46,6 +60,6 @@ void ssort(T a[], S used){
                 smallsp = j;
             }
         }
-        my_swap(a[i], s[smallsp]); // this is my template swap function
+        my_swap(a[i], a[smallsp]); // this is my template swap function
     }
 }
