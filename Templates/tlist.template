@@ -5,12 +5,17 @@ TLList<T>::TLList(){
 
 template <typename T>
 TLList<T>::TLList(TLList<T>& other){
+    // Fill in copy constructor code
+}
 
+template <typename T>
+TLList<T>::~TLList(){
+    // fill in deconstructor code
 }
 
 template <typename T>
 TLList<T>& TLList<T>::operator = (TLList<T>& other){
-
+    // fill in assignment operator code
 }
 
 
@@ -21,6 +26,6 @@ void TLList<T>::add(T item){
     }
     else{
         tail -> set_next(new Tnode<T>(item));
-        tail = tail -> next():
+        tail = tail -> next();
     }
 }
