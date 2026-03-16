@@ -1,0 +1,26 @@
+template <typename T>
+TLList<T>::TLList(){
+    head = tail = nullptr;
+}
+
+template <typename T>
+TLList<T>::TLList(TLList<T>& other){
+
+}
+
+template <typename T>
+TLList<T>& TLList<T>::operator = (TLList<T>& other){
+
+}
+
+
+template <typename T>
+void TLList<T>::add(T item){
+    if(head == nullptr){
+        head = tail = new Tnode<T>(item);
+    }
+    else{
+        tail -> set_next(new Tnode<T>(item));
+        tail = tail -> next():
+    }
+}

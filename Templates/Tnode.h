@@ -31,6 +31,10 @@ class Tnode{
         Tnode* next() const;
         T data() const {return dataF;}
 
+        // mutator
+        void set_next(Tnode* n) {nextF = n;}
+        void set_data(T d) {dataF = d;}
+
     private:
         T dataF;
         Tnode* nextF;
