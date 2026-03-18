@@ -1,3 +1,8 @@
+#include <iostream>
+
+#ifndef CLOCK_H
+#define CLOCK_H
+
 class Clock{
     public:
         Clock();
@@ -26,12 +31,16 @@ class Clock{
 class Alarm:public Clock{
     public:
         Alarm();
+        // Passing a parent to a copy constructor doesn't work by default, but you can write a constructor that takes a parent if it is useful
+        //Alarm(const Clock& c);
 
         void set_alarm(int ah, int am);
         bool is_ringing() const;
 
         // overriding the output function - same function signature as in the Clock
         void output() const;
+        // overloading output with a stream parameter 
+        void output(std::ostream& outs) const;
 
         // overloading the is_equal function - different signature from Clock
         bool is_equal(const Alarm& other) const;
@@ -41,3 +50,5 @@ class Alarm:public Clock{
         int alarm_h;
         int alarm_m;
 };
+
+#endif

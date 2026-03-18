@@ -13,6 +13,12 @@ void Alarm::output() const{
     cout << alarm_h << ":" << setw(2) << setfill('0') << alarm_m << endl;
 }
 
+void Alarm::output(ostream& outs) const{
+    // What will this do if I pass a file as the stream? 
+    Clock::output();
+    outs << alarm_h << ":" << setw(2) << setfill('0') << alarm_m << endl;
+}
+
 void Alarm::set_alarm(int ah, int am){
     alarm_h = ah;
     alarm_m = am;
@@ -35,6 +41,17 @@ Alarm::Alarm(){
     alarm_h = 0;
     alarm_m = 0;
 }
+
+// Alarm::Alarm(const Clock& c){
+//     // use c's hour and minute
+//     // have to use accessor functions because hour and minute are not public within clock
+//     hour = c.get_hour();
+//     minute = c.get_minute();
+
+//     // use default values for the alarm time
+//     alarm_h = 0;
+//     alarm_m = 0;
+// }
 
 bool Clock::is_equal(const Clock& other) const{
     return hour == other.hour && minute == other.minute;

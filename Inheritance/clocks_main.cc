@@ -36,4 +36,9 @@ int main(){
     c.is_equal(a);
     // Which version? - Why does it NOT work?
     a.is_equal(c);
+
+    // slicing - the child specific data is "lost" during the assignment (does not appear in c)
+    c = a;
+    // just doesn't work - c doesn't have all the data that a needs
+    a = c;
 }
