@@ -40,15 +40,6 @@ class Tnode{
         Tnode* nextF;
 };
 
-template <typename T>
-Tnode<T>* Tnode<T>::next() const{
-    return nextF;
-}
-
-template <typename T>
-Tnode<T>::Tnode(T d, Tnode<T>* n){
-    dataF = d;
-    nextF = n;
-}
+#include "tnode.template"
 
 #endif
