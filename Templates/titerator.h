@@ -2,6 +2,9 @@
 #ifndef IT_H
 #define IT_H
 
+// forward declaration
+template<typename T> class TLList;
+
 template<typename T>
 class node_iterator{
     public:
