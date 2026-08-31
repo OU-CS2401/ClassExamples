@@ -17,7 +17,14 @@ class Bankacct{
         void set_ownerID(std::string s) {ownerID = s;}
 
         // friend operators
-        friend Bankacct operator + (const Bankacct& b1, const Bankacct& b2);
+        // friend Bankacct operator + (const Bankacct& b1, const Bankacct& b2);
+        // friend Bankacct operator + (const Bankacct& b1, double amt);
+
+        // member operators
+        Bankacct operator + (const Bankacct& b2) const;
+
+        // I/O
+        void input(std::istream& ins);
 
     private:
         std::string ownerID;
@@ -26,5 +33,7 @@ class Bankacct{
 
 };
 
+std::istream& operator >> (std::istream& ins, Bankacct& b1);
+std::ostream& operator << (std::ostream& outs, const Bankacct& b1);
 
 //}

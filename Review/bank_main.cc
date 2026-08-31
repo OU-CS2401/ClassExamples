@@ -7,4 +7,7 @@ int main(){
     Bankacct b4("", 0, 0.05);
 
     b.set_ownerID("ME");
+
+    b3 = b + b2;
+    b2 = b2 + 35.0;
 }
