@@ -41,12 +41,24 @@ void Bankacct::input(istream& ins){
         // give prompts
     }
     //ins >> ownerID;
+    // >> stops at but leaves the newline character
+    // getline() stops at and removes the newline character
+    ins >> ws;
     getline(ins, ownerID);
     ins >> balance;
     ins >> interest_rate;
 }
 
+void output(std::ostream& outs)const {
+
+}
+
 std::istream& operator >> (std::istream& ins, Bankacct& b1){
     b1.input(ins);
-    return ins;   
+    return ins;
+}
+
+std::ostream& operator << (std::ostream& outs, const Bankacct& b1){
+    b1.output(outs);
+    return outs;
 }

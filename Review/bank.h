@@ -25,6 +25,7 @@ class Bankacct{
 
         // I/O
         void input(std::istream& ins);
+        void output(std::ostream& outs) const;
 
     private:
         std::string ownerID;
