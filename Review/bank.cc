@@ -49,7 +49,7 @@ void Bankacct::input(istream& ins){
     ins >> interest_rate;
 }
 
-void output(std::ostream& outs)const {
+void Bankacct::output(std::ostream& outs)const {
 
 }
 

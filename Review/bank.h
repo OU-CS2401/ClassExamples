@@ -1,5 +1,8 @@
 #include <string>
 
+// macro guards
+#ifndef BANK_H
+#define BANK_H
 
 //namespace CS2401Bank{
 
@@ -38,3 +41,5 @@ std::istream& operator >> (std::istream& ins, Bankacct& b1);
 std::ostream& operator << (std::ostream& outs, const Bankacct& b1);
 
 //}
+
+#endif // BANK_H
