@@ -22,7 +22,12 @@ int main(){
     cout << "ptr: " << ptr << endl;             
     cout << "address of ptr: " << &ptr << endl; 
     cout << "data where ptr is pointing: " << *ptr << endl;
-    cout << "data where pointer stored in ptr2 is pointing: " << **ptr2 << endl << endl;
+    cout << "------------------------------------------------\n";
+    cout << "ptr2: " << ptr2 << endl;
+    cout << "address of ptr2: " << &ptr2 << endl;
+    cout << "data where ptr2 is pointing: " << *ptr2 << endl;
+    cout << "data where pointer stored in ptr2 is pointing: " << **ptr2 << endl;
+    cout << "------------------------------------------------\n";
 
     string s = "hello";
     cout << "s: " << s << endl;
@@ -32,7 +37,7 @@ int main(){
     s_ptr = &s;
     cout << "ptr: " << s_ptr << endl;             
     cout << "address of ptr: " << &s_ptr << endl; 
-    cout << "data where ptr is pointing: " << *s_ptr << endl << endl;
+    cout << "data where ptr is pointing: " << *s_ptr << endl;
 
 
     // Now let's use dynamic memory
