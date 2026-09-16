@@ -47,4 +47,37 @@ int main(){
     *dynamic_int = 2;
     // deallocate the dynamically allocated memory - does not do anything to the pointer itself
     delete dynamic_int;
+
+    // Memory leaks
+    // Method 1
+    new int;
+    new int;
+    new int;
+
+    // Method 2
+    dynamic_int = new int;
+    dynamic_int = new int;
+
+
+    // Pointers can be any type
+    double* d_ptr = new double;
+    Bankacct* b_ptr = new Bankacct;
+    // Can access elements of structures/classes by dereferencing the pointer and then using the .
+    cout << (*b_ptr).output();
+
+    // Arrays - the name of an array stores the address of the first element
+    int array[10];
+    cout << array << endl;
+    dynamic_int = array;
+    // would move this pointer to the second element of the array
+    dynamic_int++;
+
+
+    // Dereferencing pointers that are not pointed to a valid address *should* crash
+    int* i;
+    cout << *i << endl;
+    // Calling delete on the same pointer twice usually results in a crash (sometimes with a "double free" error)
+    delete i;
+    delete i;
+
 }
