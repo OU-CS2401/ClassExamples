@@ -80,4 +80,10 @@ int main(){
     delete i;
     delete i;
 
+
+    // arrays
+    i = new int[5];
+    i[0] = 1;
+    delete [] i;
+
 }
