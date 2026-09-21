@@ -8,6 +8,39 @@ DA::DA(){
     data = new int[size];
 }
 
+DA::~DA(){
+    delete [] data;
+}
+
+DA::DA(const DA& other){
+    used = other.used;
+    size = other.size;
+
+    data = new int[size];
+    for(int i = 0; i < used; i++){
+        data[i] = other.data[i];
+    }
+}
+
+void DA::operator = (const DA& other){
+    // check for self assignment
+    if(this == &other){
+        return;
+    }
+    
+    // Deallocate the existing array (deconstructor)
+    delete [] data;
+
+    // Make a copy (copy constructor)
+    used = other.used;
+    size = other.size;
+
+    data = new int[size];
+    for(int i = 0; i < used; i++){
+        data[i] = other.data[i];
+    }
+}
+
 void DA::add_item(int item){
     if(used == size){
         resize();
