@@ -7,12 +7,26 @@ int main(){
     // pointer to the beginning of the list
     node* head = nullptr;
 
+    // head = new node;
+    // (*head).next = nullptr;
+    // (*head).data = 1;
+
+    // (*head).next = new node;
+    // (*(*head).next).next = nullptr;
+    // (*(*head).next).data = 2;
+
+
     head = new node;
-    (*head).next = nullptr;
-    (*head).data = 1;
+    head -> next = nullptr;
+    head -> data = 1;
 
-    (*head).next = new node;
-    (*(*head).next).next = nullptr;
-    (*(*head).next).data = 2;
+    head -> next = new node;
+    head -> next -> next = nullptr;
+    head -> next -> data = 2;
 
+    node* tmp = head;
+    while(tmp != nullptr){
+        cout << tmp -> data;
+        tmp = tmp -> next;
+    }
 }
