@@ -3,7 +3,7 @@ using namespace std;
 
 void add_to_end(node*& head, int item);
 
-void remove(node* head, int target);
+void remove(node*& head, int target);
 
 struct node{
     int data;
@@ -32,10 +32,10 @@ int main(){
     // head -> next -> next = nullptr;
     // head -> next -> data = 2;
 
-    node* tmp = head;
-    while(tmp != nullptr){
-        cout << tmp -> data;
-        tmp = tmp -> next;
+    node* cursor = head;
+    while(cursor != nullptr){
+        cout << cursor -> data;
+        cursor = cursor -> next;
     }
 }
 
@@ -63,10 +63,20 @@ void add_to_end(node*& head, int item){
 
 }
 
-void remove(node* head, int target){
-    node *cursor, *prev;
+void remove(node*& head, int target){
+    /*
+        Special Cases:
+        1. Removing the head node
+        2. Removing the last node
+        3. Empty list
+        4. Removing the only node in the list
+        5. Item not in the list
+    
+    */
+    node *cursor = nullptr, *prev = nullptr;
 
     cursor = head;
+    prev = head;
     while(cursor != nullptr && cursor -> data != target){
         prev = cursor;
         cursor = cursor -> next;
@@ -78,7 +88,14 @@ void remove(node* head, int target){
     }
 
     if(cursor != nullptr){
-        prev -> next = cursor -> next;
-        delete cursor;
+        // special case for removing the head
+        if(cursor == head){
+            head = head -> next;
+            delete cursor;
+        }
+        else{
+            prev -> next = cursor -> next;
+            delete cursor;
+        }
     }
 }
