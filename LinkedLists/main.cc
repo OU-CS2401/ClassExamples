@@ -73,6 +73,9 @@ void remove(node*& head, int target){
         5. Item not in the list
     
     */
+    // This implementation already handled the empty list case safely, but if you need a special case to do so, it would look like this
+    if(head == nullptr) return;
+
     node *cursor = nullptr, *prev = nullptr;
 
     cursor = head;
