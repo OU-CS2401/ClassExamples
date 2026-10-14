@@ -66,7 +66,8 @@ void LL_Cont::add_end(int item){
 
 void LL_Cont::add_head(int item){
     if(head == nullptr){
-        head = tail = new NODE(item, head);
+        head = new NODE(item, head);
+        tail = head;
         return;
     }
     head = new NODE(item, head);
