@@ -1,13 +1,16 @@
 #include "tcont.h"
+#include "tll.h"
 #include <string>
 
 using namespace std;
 
 int main(){
-    TCont<int> nums;
-    TCont<double> other_nums;
-    TCont<string> names;
+    // TCont<int> nums;
+    // TCont<double> other_nums;
+    // TCont<string> names;
 
-    nums.add(7);
-    names.add("Me");
+    // nums.add(7);
+    // names.add("Me");
+
+    TLList<int> nums;
 }
