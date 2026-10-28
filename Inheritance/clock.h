@@ -13,7 +13,9 @@ class Clock{
         int get_hour() const;
         int get_minute() const;
 
-        void output() {std::cout << hour << ":" << std::setw(2) << std::setfill('0') << minute << std::endl;}
+        void output() {
+            std::cout << hour << ":" << std::setw(2) << std::setfill('0') << minute << std::endl;
+        }
 
         bool is_equal(const Clock& other){
             return hour == other.hour && minute == other.minute;

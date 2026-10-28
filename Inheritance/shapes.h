@@ -8,9 +8,9 @@
 class Shape{
     public:
         double cost() {return area() * cost_per;}
-        //virtual double area() {return 0.0;}
+        virtual double area() {return 0.0;}
         // purely virtual
-        virtual double area() = 0;
+        //virtual double area() = 0;
 
     private:
         double cost_per;
