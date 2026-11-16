@@ -28,3 +28,24 @@ void print_backwards(node* head){
         cout << head -> data() << endl;
     }
 }
+
+
+
+
+// recursive search function for linked list 
+node* search(node* head, int target){
+    // first base case (list is empty or there are no items left to check)
+    if(head == nullptr){
+        return nullptr;
+    }
+    // second base case (the data was found in the first node)
+    else if(head -> data() == target){
+        return head;
+    }
+    else{
+        // otherwise, check the rest of the list for the same target 
+        // if a recursive function has a non-void return type, you must put return before the recursive call
+        return search(head -> next(), target);
+        
+    }
+}
