@@ -50,3 +50,9 @@ int main(){
     cout << "-------------------\n";
 }
 */
+
+
+// Turn taking 
+next_mover() == HUMAN
+next_mover() == COMPUTER
+
